@@ -1,28 +1,17 @@
-import { Component, OnInit } from '@angular/core';
-import { CarouselComponent, CarouselInnerComponent, CarouselItemComponent } from '@coreui/angular'; ;
+import { Component } from '@angular/core';
+import { NgbCarouselModule } from '@ng-bootstrap/ng-bootstrap';
+import { CommonModule } from '@angular/common';
 
 @Component({
-  selector: 'docs-carousel01',
-  templateUrl: './carousel01.component.html',
-  standalone: true,
-  imports: [CarouselComponent, CarouselInnerComponent, CarouselItemComponent]
+  selector: 'app-img-car',
+  imports: [NgbCarouselModule, CommonModule],
+  templateUrl: './img-car.html',
+  styleUrl: './img-car.css'
 })
-export class Carousel01Component implements OnInit {
-  slides: any[] = new Array(3).fill({ id: -1, src: '', title: '', subtitle: '' });
-
-  ngOnInit(): void {
-    this.slides[0] = {
-      src: './assets/img/angular.jpg'
-    };
-    this.slides[1] = {
-      src: './assets/img/react.jpg'
-    };
-    this.slides[2] = {
-      src: './assets/img/vue.jpg'
-    };
-  }
-
-  onItemChange($event: any): void {
-    console.log('Carousel onItemChange', $event);
-  }
+export class ImgCar {
+  images = [
+    {name: 'IMG_6299.JPG', caption: 'Picture 1'},
+    {name: 'IMG_6300.JPG', caption: 'Picture 2'},
+    {name: 'IMG_6301.JPG', caption: 'Picture 3'}
+  ];
 }

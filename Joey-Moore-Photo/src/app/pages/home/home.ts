@@ -1,9 +1,9 @@
 import { Component } from '@angular/core';
-
+import { ImgCar } from '../../components/img-car/img-car';
 
 @Component({
   selector: 'app-home',
-  imports: [],
+  imports: [ImgCar],
   templateUrl: './home.html',
   styleUrl: './home.css'
 })
