@@ -10,8 +10,8 @@ import { CommonModule } from '@angular/common';
 })
 export class ImgCar {
   images = [
-    {name: 'IMG_6299.JPG', caption: 'Picture 1'},
-    {name: 'IMG_6300.JPG', caption: 'Picture 2'},
-    {name: 'IMG_6301.JPG', caption: 'Picture 3'}
+    {name: 'IMG_6299.JPG', caption: ''},
+    {name: 'IMG_6300.JPG', caption: ''},
+    {name: 'IMG_6301.JPG', caption: ''}
   ];
 }

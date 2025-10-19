@@ -12,12 +12,12 @@ body {
     width: 73em;
 }
 
-.SelfImg{
-    height: 75%;
-    width: 20em;
-    margin-left: 3em;
-    margin-right: 2em;
-    margin-bottom: 0;
+.SelfImg {
+    display: block;        /* Prevent inline side-by-side behavior */
+    width: 80%;            /* Adjust as needed */
+    max-width: 600px;      /* Keeps it from getting too big */
+    margin: 20px auto;     /* Centers it horizontally and adds space from carousel */
+    height: auto;
 }
 
 .AboutMe{
