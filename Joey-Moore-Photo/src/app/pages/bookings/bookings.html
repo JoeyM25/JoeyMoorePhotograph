@@ -1,0 +1,7 @@
+<div class="booking-container">
+    <h2>Bookings</h2>
+    @if (auth.isLoggedIn()){
+        <p>Welcome, {{auth.user()?.email}}</p>
+    }
+    
+</div>

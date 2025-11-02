@@ -1,13 +1,21 @@
 <mat-toolbar>
-  <span>Joey Moore Photography</span>
-  <span class="example-spacer"></span>
-  <button matIconButton [matMenuTriggerFor]="menu" aria-label="Example icon-button with a menu">
+    <button matButton routerLink="home" style="font-size: large;">
+        <span>Joey Moore Photography</span>
+    </button>
+    <span class="example-spacer"></span>
+    @if (auth.isLoggedIn()) {
+        <span>{{auth.user()?.email}}</span>
+    }
+    <button matIconButton [matMenuTriggerFor]="menu" aria-label="Dropdown">
         <mat-icon>menu</mat-icon>
     </button>
     <mat-menu #menu="matMenu">
-        <button mat-menu-item>
-            <mat-icon>home</mat-icon>
-            <span>Home</span>
-        </button>
+        @if (auth.isLoggedIn()) {
+            <button mat-menu-item (click)="logout()">Logout</button>
+            <button mat-menu-item routerLink="bookings">Check Bookings</button>
+        }
+        @else {
+            <button mat-menu-item routerLink="login">Login</button>
+        }
     </mat-menu>
 </mat-toolbar>
