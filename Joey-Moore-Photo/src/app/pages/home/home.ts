@@ -10,7 +10,9 @@
   import { MatDatepickerModule } from '@angular/material/datepicker';
   import { provideNativeDateAdapter } from '@angular/material/core';
   import { addDoc, collection, Firestore } from '@angular/fire/firestore';
-import { CommonModule } from '@angular/common';
+  import { CommonModule } from '@angular/common';
+  import { MatInput } from '@angular/material/input';
+
 
   export interface DialogData {
     name: string;
@@ -47,10 +49,13 @@ import { CommonModule } from '@angular/common';
       MatDialogActions,
       MatDialogClose,
       MatDatepickerModule,
+      MatInput,
     ],
   })
   export class BookDialog {
     selectedDate!: Date;
+    name!: String;
+    contact!: String;
 
     constructor(private firestore: Firestore, private dialogRef: MatDialogRef<BookDialog>){}
     
@@ -61,13 +66,20 @@ import { CommonModule } from '@angular/common';
         alert("Please select a date before booking!");
         return;
       }
+      if (!this.contact){
+        alert("Please add a form of contact before booking!");
+        return;
+      }
       try {
         const bookingsRef = collection(this.firestore, 'Bookings');
         await addDoc(bookingsRef, {
           date: this.selectedDate,
-          createdAt: new Date()
+          createdAt: new Date(),
+          name: this.name,
+          contact: this.contact,
         });
         console.log('Booking saved succesfully!');
+        alert("Booking successful!")
         this.dialogRef.close();
       }
       catch (err) {
