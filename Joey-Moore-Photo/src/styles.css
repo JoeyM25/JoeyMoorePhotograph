@@ -1,7 +1,8 @@
 
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; 
-background-color: rgba(29, 31, 44, 0.511);}
+background-image: linear-gradient(to bottom, black, grey); background-attachment: fixed; background-size: cover; background-repeat: no-repeat;
+background-position: center center;}
 
 /* === Custom NgbCarousel Arrows === */
 .carousel-control-prev-icon,

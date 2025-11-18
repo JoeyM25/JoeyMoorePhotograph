@@ -12,8 +12,11 @@ import { NgbCarouselModule } from '@ng-bootstrap/ng-bootstrap';
 })
 export class ImgCar {
   images = [
-    { src: 'IMG_6301.JPG', caption: 'Polly 1' },
-    { src: 'IMG_6299.JPG', caption: 'Polly 2' },
+    { src: 'DXNP5581.JPG', caption: 'Polly 1' },
+    { src: 'EICI6296.JPG', caption: 'Polly 2' },
+    { src: 'IMG_6073.JPG', caption: 'Polly 3' },
+    { src: 'IMG_6291.JPG', caption: 'Polly 1' },
+    { src: 'IMG_6067.JPG', caption: 'Polly 2' },
     { src: 'IMG_6300.JPG', caption: 'Polly 3' },
   ];
 

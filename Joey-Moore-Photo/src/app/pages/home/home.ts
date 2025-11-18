@@ -32,7 +32,20 @@
     openBookDialog() {
       this.dialog.open(BookDialog, {width: '400px'})
     }
+    
+    open1HourDialog() {
+      this.dialog.open(OneHourDialog, {width: '400px'})
+    }
+
+    open2HourDialog() {
+      this.dialog.open(TwoHourDialog, {width: '400px'})
+    }
+
+    open3HourDialog() {
+      this.dialog.open(ThreeHourDialog, {width: '400px'})
+    }
   }
+
 
   @Component({
     selector: 'bookdialog',
@@ -90,4 +103,52 @@
     onNoClick(): void {
       this.dialogRef.close();
     }
+  }
+
+  @Component({
+    selector: 'oneHourDialog',
+    standalone: true,
+    templateUrl: './oneHourDialog.html',
+    providers: [provideNativeDateAdapter()],
+    imports: [
+      MatDialogTitle,
+      MatDialogContent,
+      MatDialogActions,
+      MatDialogClose,
+    ],
+  })
+  export class OneHourDialog {
+
+  }
+
+  @Component({
+    selector: 'twoHourDialog',
+    standalone: true,
+    templateUrl: './twoHourDialog.html',
+    providers: [provideNativeDateAdapter()],
+    imports: [
+      MatDialogTitle,
+      MatDialogContent,
+      MatDialogActions,
+      MatDialogClose,
+    ],
+  })
+  export class TwoHourDialog {
+
+  }
+
+  @Component({
+    selector: 'threeHourDialog',
+    standalone: true,
+    templateUrl: './threeHourDialog.html',
+    providers: [provideNativeDateAdapter()],
+    imports: [
+      MatDialogTitle,
+      MatDialogContent,
+      MatDialogActions,
+      MatDialogClose,
+    ],
+  })
+  export class ThreeHourDialog {
+
   }

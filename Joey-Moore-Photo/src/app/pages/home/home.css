@@ -157,8 +157,13 @@ app-img-car div {
 }
 
 .pricingAndAboutMe{
-  background-color: #1b1b1b;
   padding: 1em;
   overflow: visible; /* Allow hover scaling to show outside */
   position: relative; /* Keeps layout stable */
+}
+
+.BookButtons{
+  justify-content: center;
+  display: flex;
+  padding: 2em;
 }
